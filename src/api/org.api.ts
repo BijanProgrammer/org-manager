@@ -25,10 +25,10 @@ export async function createAnOrganizationInvitation(
   });
 }
 
-export async function listOrganizationMembers(): Promise<Res> {
-  return await octokit.request("GET /orgs/{org}/members", {
+export async function listTeamMembers(): Promise<Res> {
+  return await octokit.request("GET /orgs/{org}/teams/{team_slug}/members", {
     org: APP_CONFIG.org,
-    per_page: 100,
+    team_slug: APP_CONFIG.teamSlug,
     headers: {
       "X-GitHub-Api-Version": "2022-11-28",
     },
