@@ -1,3 +1,7 @@
+export function emailsFilePath(): string {
+  return `data/emails.json`;
+}
+
 export function membersFilePath(): string {
   return `data/${APP_CONFIG.prefix}/members.json`;
 }
